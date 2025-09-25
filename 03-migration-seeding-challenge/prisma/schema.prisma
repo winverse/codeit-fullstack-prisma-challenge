@@ -1,4 +1,8 @@
 generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
@@ -8,9 +12,9 @@ model User {
   email     String    @unique
   name      String?
   posts     Post[]
+  comments  Comment[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  Comment   Comment[]
 }
 
 model Post {
@@ -19,9 +23,9 @@ model Post {
   content   String?
   author    User      @relation(fields: [authorId], references: [id])
   authorId  Int
+  comments  Comment[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  Comment   Comment[]
 }
 
 model Comment {

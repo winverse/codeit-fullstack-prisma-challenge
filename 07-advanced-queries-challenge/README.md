@@ -28,7 +28,19 @@
 
 ## 📋 TODO 체크리스트
 
-### 0단계: 시작 코드 확인
+### 0단계: 환경 설정 및 시작 코드 확인
+
+- [ ] **데이터베이스 초기화**
+
+  **새로운 데이터베이스를 사용하는 경우 (마이그레이션 방식)**
+  - [ ] `npx prisma migrate dev --name init`로 데이터베이스 스키마를 적용했나요?
+  
+  **기존 데이터베이스를 계속 사용하는 경우 (DB Push 방식)**
+  - [ ] 스키마 상태를 확인했나요? `npx prisma validate`
+  - [ ] 스키마를 데이터베이스에 적용했나요? `npx prisma db push`
+  - [ ] Prisma Client를 업데이트했나요? `npx prisma generate`
+
+- [ ] **기본 설정**
   - [ ] 기본 Comment CRUD 기능이 이미 구현되어 있는지 확인
   - [ ] `npm install` 및 `npm run seed` 실행
 

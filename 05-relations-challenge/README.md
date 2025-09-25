@@ -25,7 +25,18 @@
 
 ### 1단계: 데이터베이스 초기화 및 시딩
 
-- [ ] `npx prisma migrate dev` 명령어를 실행하여 데이터베이스 스키마를 적용했나요?
+**새로운 데이터베이스를 사용하는 경우 (마이그레이션 방식)**
+
+- [ ] `npx prisma migrate dev --name init` 명령어를 실행하여 데이터베이스 스키마를 적용했나요?
+
+**기존 데이터베이스를 계속 사용하는 경우 (DB Push 방식)**
+
+- [ ] 스키마 상태를 확인했나요? `npx prisma validate`
+- [ ] 스키마를 데이터베이스에 적용했나요? `npx prisma db push`
+- [ ] Prisma Client를 업데이트했나요? `npx prisma generate`
+
+**공통 작업**
+
 - [ ] `npm run seed` 명령어를 실행하여 `User`, `Post`, `Comment` 테스트 데이터를 생성했나요?
 
 ### 2단계: Relations 기능 구현 (Challenge)

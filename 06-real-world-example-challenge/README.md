@@ -29,7 +29,16 @@
   - [ ] `npm install`로 의존성 패키지를 설치했나요?
 
 - [ ] **데이터베이스 초기화**
-  - [ ] `npx prisma db push`로 스키마를 데이터베이스에 동기화했나요?
+
+  **새로운 데이터베이스를 사용하는 경우 (마이그레이션 방식)**
+  - [ ] `npx prisma migrate dev --name init`로 데이터베이스 스키마를 적용했나요?
+  
+  **기존 데이터베이스를 계속 사용하는 경우 (DB Push 방식)**
+  - [ ] 스키마 상태를 확인했나요? `npx prisma validate`
+  - [ ] 스키마를 데이터베이스에 적용했나요? `npx prisma db push`
+  - [ ] Prisma Client를 업데이트했나요? `npx prisma generate`
+  
+  **공통 작업**
   - [ ] `npm run seed`로 초기 데이터를 삽입했나요?
   - [ ] DBeaver에서 User, Post, Comment 데이터가 모두 생성되었는지 확인했나요? (또는 `npx prisma studio` 사용 가능)
 

@@ -152,7 +152,7 @@ async function deleteUser(id) {
   return await prisma.user.delete({ where: { id: Number(id) } });
 }
 
-// 객체로 묶어서 export
+// 04-crud 스타일에 맞게 객체로 묶어서 export
 export const userRepository = {
   createUser,
   findUserById,
@@ -168,7 +168,7 @@ export const userRepository = {
 import express from 'express';
 import { userRepository } from '../repository/user.repository.js';
 
-const router = express.Router();
+export const usersRouter = express.Router();
 
 // POST /users - 새 사용자 생성
 router.post('/', async (req, res) => {
@@ -222,8 +222,6 @@ router.delete('/:id', async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
-
-export const usersRouter = router;
 ```
 
 ### `post.repository.js` 예시
@@ -276,7 +274,7 @@ async function deletePost(id) {
   });
 }
 
-// 객체로 묶어서 export
+// 04-crud 스타일에 맞게 객체로 묶어서 export
 export const postRepository = {
   createPost,
   findPostById,

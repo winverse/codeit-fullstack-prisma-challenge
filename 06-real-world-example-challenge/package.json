@@ -1,0 +1,27 @@
+{
+  "name": "06-real-world-example-challenge",
+  "version": "1.0.0",
+  "description": "Prisma 종합 API 구현 챌린지",
+  "author": "Your Name <your-email@example.com>",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "format": "prettier --write .",
+    "seed": "node scripts/seed.js"
+  },
+  "dependencies": {
+    "@prisma/client": "6.16.2",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.0.3",
+    "eslint": "^9.36.0",
+    "nodemon": "3.1.10",
+    "prettier": "^3.6.2",
+    "prisma": "^6.16.2"
+  }
+}

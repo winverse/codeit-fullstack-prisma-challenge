@@ -152,7 +152,7 @@ async function deleteUser(id) {
   return await prisma.user.delete({ where: { id: Number(id) } });
 }
 
-// 04-crud 스타일에 맞게 객체로 묶어서 export
+// 객체로 묶어서 export
 export const userRepository = {
   createUser,
   findUserById,
@@ -276,7 +276,7 @@ async function deletePost(id) {
   });
 }
 
-// 04-crud 스타일에 맞게 객체로 묶어서 export
+// 객체로 묶어서 export
 export const postRepository = {
   createPost,
   findPostById,

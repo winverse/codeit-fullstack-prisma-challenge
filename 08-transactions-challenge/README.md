@@ -30,6 +30,16 @@
 
 ### 0단계: 환경 설정
 
+- [ ] **데이터베이스 초기화**
+
+  **새로운 데이터베이스를 사용하는 경우 (마이그레이션 방식)**
+  - [ ] `npx prisma migrate dev --name init`로 데이터베이스 스키마를 적용했나요?
+  
+  **기존 데이터베이스를 계속 사용하는 경우 (DB Push 방식)**
+  - [ ] 스키마 상태를 확인했나요? `npx prisma validate`
+  - [ ] 스키마를 데이터베이스에 적용했나요? `npx prisma db push`
+  - [ ] Prisma Client를 업데이트했나요? `npx prisma generate`
+
 - [ ] **기본 환경**
   - [ ] `src/repository/transaction.repository.js`에 트랜잭션 함수들이 이미 구현되어 있는지 확인했나요?
   - [ ] `.env` 파일과 데이터베이스 연결이 정상적으로 되어 있나요?

@@ -33,14 +33,34 @@
     npm install -D @faker-js/faker
     ```
 
-### 1단계: 마이그레이션 실행하기
+### 1단계: 데이터베이스 스키마 적용하기
+
+**새로운 데이터베이스를 사용하는 경우 (마이그레이션 방식)**
 
 - [ ] `02-schema-challenge`에서 `Comment` 모델까지 모두 추가한 `schema.prisma` 파일이 준비되었는지 확인하세요.
 - [ ] 터미널에서 아래 명령어를 실행하여, `User`, `Post`, `Comment` 세 개의 모델을 모두 포함하는 마이그레이션을 생성하고 데이터베이스에 적용하세요.
   ```bash
   npx prisma migrate dev --name init_user_post_comment
   ```
-- [ ] DB 관리 도구를 사용하여, 세 개의 테이블이 모두 잘 생성되었는지 직접 확인해 보세요.
+
+**기존 데이터베이스를 계속 사용하는 경우 (DB Push 방식)**
+
+- [ ] 스키마 상태를 확인하세요:
+  ```bash
+  npx prisma validate
+  ```
+- [ ] 스키마 변경사항을 데이터베이스에 적용하세요:
+  ```bash
+  npx prisma db push
+  ```
+- [ ] Prisma Client를 생성/업데이트하세요:
+  ```bash
+  npx prisma generate
+  ```
+
+**공통 확인사항**
+
+- [ ] DB 관리 도구를 사용하여, 세 개의 테이블(`User`, `Post`, `Comment`)이 모두 잘 생성되었는지 직접 확인해 보세요.
 
 ### 2단계: 시딩 스크립트 작성 및 설정
 
